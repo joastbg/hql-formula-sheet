@@ -1,0 +1,91 @@
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+% Detta är ett exempel på ett latexdokument.
+% 
+% Alla dokument består av följande delar:
+%
+%          \documentclass[optioner]{dokumentklass}
+%            ...inställningar...
+%          \begin{document}
+%            ...text...
+%          \end{document}
+%
+% Som ni kanske redan har förstått är används procent (%) för
+% kommentarer.
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+\documentclass[a4paper]{article}
+
+\usepackage[T1]{fontenc}                % För svenska bokstäver
+\usepackage{amsmath}
+\usepackage{amsfonts}
+\usepackage{mathtools}
+\usepackage[thmmarks,amsmath,amsthm,hyperref]{ntheorem}
+
+%\usepackage[swedish]{babel}             % För svensk avstavning och svenska
+                                        % rubriker (t ex "innehållsförteckning)
+\title{HQL Formula Sheet}
+%\date{}
+
+\begin{document}
+
+\maketitle                      % Skriver ut rubriken som vi
+                                % deklarerade ovan med \title, \author
+                                % och eventuellt \date
+
+\section{Actual Day Count}                                
+Actual/Actual Day Count (Non-leap year) 
+\[ number of days in period = 365 \]
+Actual/Actual Day Count (Leap year) 
+\[ number of days in period = 366 \]
+\section{Time value of money}
+
+Future value
+\[ FV = PV(1+r)^n \]
+Present value
+\[ PV = \frac{FV}{(1+r)^n} \]
+Compound factor
+\[ CF = (1+r)^n \]
+Discount factor
+\[ DF = \frac{1}{(1+r)^n} = \frac{1}{CF} \]
+
+\subsection{Compound Interest}
+\[ R = (1+r)^n \]
+\subsection{Periodic Compounding}
+Annual compound interest for periodic compounding, $r$ = annual nominal interest rate, $n$ = number of compoundings per year, $t$ = number of years
+\[ R = (1+\frac{r}{n})^{nt} \implies (1+\frac{r}{n})^{\lfloor{nt}\rfloor} \]
+
+\subsection{Continous Compounding}
+\[ FV = V \cdot e^{rt} \]
+Continous compound factor
+\[ CF = e^{rt} \]
+
+\section{Bonds}
+Face value - Every bond has a fixed face value. This face value serves as the basis for the interest payment.
+\subsection{Zero Coupon Bonds}
+A zero coupon bond has no interim coupons and there are no interim repayments. The full amount is paid back at maturity.
+F = face value, r = yield rate, t = time to maturity, Nom = nominal (100)
+\[ PV = \frac{F}{(1+r)^t} \]
+
+\subsection{Annuity}
+Annuity has a fixed rate coupon, the cash flow at each settlement date remains constant during the lifetime of the bond.
+Interest paid $m$ times per year $k$ periods
+\[ \sum_{k=1}^{m}\frac{Nom}{(1+r)^k} \]
+
+\subsection{Bullet}
+Bullet has a fixed rate coupon which is paid at every settlement. No payments before maturity.
+C = coupon, r = yield rate, n = ongoing years, N = total number of years, Nom = nominal (100)
+\[ PV = \sum_{k=1}^{N}\frac{C}{(1+r)^k} + \frac{Nom}{(1+r)^N} \]
+
+\subsection{Consol}
+Consol has a fixed rate coupon. Consol bond never terminates and there is no payments at any settlement, only interest is paid.
+C = coupon, r = yield rate
+\[ PV = \frac{C}{r} \]
+
+\subsection{Serial}
+Serial has a fixed rate coupon, the repayments are spread evenly over all remaining settlements and the coupon payments, $C_k$ decline
+over time.
+\[ PV = \sum_{k=1}^{N}\frac{C_k}{(1+r)^k} + \frac{Nom}{(1+r)^N} \]
+
+\end{document}                 % The input file ends with this command.
+
+
