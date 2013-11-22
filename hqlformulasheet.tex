@@ -24,6 +24,7 @@
 %\usepackage[swedish]{babel}             % För svensk avstavning och svenska
                                         % rubriker (t ex "innehållsförteckning)
 \title{HQL Formula Sheet}
+\author{}
 %\date{}
 
 \begin{document}
@@ -32,11 +33,29 @@
                                 % deklarerade ovan med \title, \author
                                 % och eventuellt \date
 
-\section{Actual Day Count}                                
-Actual/Actual Day Count (Non-leap year) 
-\[ number of days in period = 365 \]
-Actual/Actual Day Count (Leap year) 
-\[ number of days in period = 366 \]
+\section{Day Count Conventions}                                
+
+The following bullets describe the a subset of the day count conventions that
+are used when discounting future cashflows.
+
+\begin{itemize}
+\item ACT/ACT
+\[ number\; of\; days\; in\; period =
+\begin{cases} 
+366 & \text{if it is a leap year}\\
+365 & \text{otherwise}
+\end{cases}
+\]
+
+\item ACT/365 Fixed
+\[ number\; of\; days\; in\; period = 365 \]
+
+\item Actual/360
+\[ number\; of\; days\; in\; period = 360 \]
+
+\item 30/360 (assume all months have 30 days)
+\end{itemize}
+
 \section{Time value of money}
 
 Future value
